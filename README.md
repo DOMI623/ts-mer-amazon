@@ -1,7 +1,6 @@
 # TypeScript RD AMAZON
 
-## Lecciones
-## Lecciones
+## Pasos
 1. Introducción
 2. Descargar herramientas
 3. Crear app de TypeScript React con Vite
