@@ -55,7 +55,7 @@ export const sampleProducts: Product[] = [
     category: 'Accessories',
     image: '../images/p5.jpg',
     price: 2200,
-    countInStock: 18,
+    countInStock: 0,
     brand: 'New Era',
     rating: 4.7,
     numReviews: 19,
