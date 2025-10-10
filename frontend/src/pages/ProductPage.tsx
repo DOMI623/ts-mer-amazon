@@ -22,7 +22,7 @@ export default function ProductPage() {
      ) : error   ? (
        <MessageBox variant="danger">{getError(error as ApiError)}</MessageBox>
      ) : !product ? (
-       <MessageBox variant="danger">Product Not Found</MessageBox>
+       <MessageBox variant="danger">Product No Encontrado</MessageBox>
      ): (
     <div>
       <Helmet>

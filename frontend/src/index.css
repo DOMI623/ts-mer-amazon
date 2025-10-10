@@ -9,33 +9,34 @@
 }
 
 .product-card {
-  border: 1px solid #ddd;            /* borde sutil predeterminado */
+  border: 1px solid var(--bs-border-color);  /* se adapta al tema */
   border-radius: 8px;
   transition: all 0.2s ease-in-out;
-  height: 100%;                      /* igual altura en todas */
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: var(--bs-body-bg);       /* color del fondo según el tema */
+  color: var(--bs-body-color);               /* color del texto según el tema */
   box-sizing: border-box;
 }
 
 .product-card:hover {
-  border-color: #000;                /* borde negro en hover */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transform: translateY(-3px);       /* leve elevación sin agrandar */
-  z-index: 1;                        /* evita que otras tarjetas lo tapen */
+  border-color: var(--bs-emphasis-color);    /* color más fuerte según el tema */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+  z-index: 1;
 }
 
 .product-image {
   width: 100%;
   height: 250px;
   object-fit: contain;
-  background-color: #fff;
   padding: 6px;
   border-radius: 8px 8px 0 0;
 }
 
+/* Enlaces: se adaptan al tema */
 a {
   color: black;
   text-decoration: none;
@@ -43,8 +44,18 @@ a {
 }
 
 a:hover {
-  color: #007bff;
+  color: #007bff; /* azul en hover */
 }
+
+/* === MODO OSCURO === */
+body[data-bs-theme="dark"] a {
+  color: #fff; /* enlaces blancos */
+}
+
+body[data-bs-theme="dark"] a:hover {
+  color: #0d6efd; /* azul Bootstrap estándar al pasar el cursor */
+}
+
 
 .rating span {
   color: #ffc000;
