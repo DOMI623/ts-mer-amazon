@@ -14,7 +14,7 @@ productRouter.get(
 productRouter.get(
     '/slug/:slug', 
     asyncHandler(async (req, res) => {
-    const product = await ProductModel.find({ slug: req.params.slug })
+    const product = await ProductModel.findOne({ slug: req.params.slug })
     if (product) {
         res.json(product)
     } else {

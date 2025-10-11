@@ -31,10 +31,11 @@
 .product-image {
   width: 100%;
   height: 250px;
-  object-fit: contain;
-  padding: 6px;
+  object-fit: cover;   /* Cambiado para que NO deje bordes */
+  padding: 0;          /* Quité padding para evitar espacios */
   border-radius: 8px 8px 0 0;
 }
+
 
 /* Enlaces: se adaptan al tema */
 a {
@@ -63,6 +64,10 @@ body[data-bs-theme="dark"] a:hover {
 
 img.large {
   max-width: 100%;
+}
+
+img.thumbail {
+  height: 80px;
 }
 
 
