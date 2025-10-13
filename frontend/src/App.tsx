@@ -1,4 +1,4 @@
-import { Badge, Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Badge, Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { Store } from "./Store";
@@ -7,12 +7,21 @@ import 'react-toastify/dist/ReactToastify.css';
 import { LinkContainer } from "react-router-bootstrap";
 
 function App() {
-  const {state: { mode, cart },
+  const {state: { mode, cart, userInfo },
    dispatch,
   } = useContext(Store)
 
   const switchModeHandler = () => {
   dispatch({ type: 'SWITCH_MODE' })
+}
+
+const signoutHandler = () => {
+dispatch({ type: 'USER_SIGNOUT' })
+localStorage.removeltem('userInfo')
+localStorage.removeltem( 'cartItems')
+localStorage.removeltem('shippingAddress' )
+localStorage. removeltem( 'paymentMethod' )
+window.location.href = '/signin'
 }
 
   useEffect(() => {
@@ -25,7 +34,7 @@ function App() {
         <ToastContainer position="bottom-center" limit={1} />
         <Navbar expand="lg">
           <Container>
-            <LinkContainer to="/" className="text-white" style={{ textDecoration: 'none' }}
+            <LinkContainer to="/" style={{ textDecoration: 'none' }}
 >
             <Navbar.Brand>rdamazon</Navbar.Brand>
             </LinkContainer>
@@ -45,9 +54,22 @@ function App() {
                  </Badge>
                )}
             </Link>
-            <a href="/signin" className="nav-link">
-              Iniciar Sesión
-            </a>
+            {userInfo ? (
+  <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+    <Link
+      className="dropdown-item"
+      to="#signout"
+      onClick={signoutHandler}
+    >
+      Cerrar Sesion
+    </Link>
+  </NavDropdown>
+) : (
+  <Link className="nav-link" to="/signin">
+    Sign In
+  </Link>
+)}
+
           </Nav>
         </Navbar>
       </header>
