@@ -1,5 +1,5 @@
 import { Badge, Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { Store } from "./Store";
 import { ToastContainer } from 'react-toastify';
@@ -19,9 +19,9 @@ const signoutHandler = () => {
 dispatch({ type: 'USER_SIGNOUT' })
 localStorage.removeltem('userInfo')
 localStorage.removeltem( 'cartItems')
-localStorage.removeltem('shippingAddress' )
-localStorage. removeltem( 'paymentMethod' )
-window.location.href = '/signin'
+localStorage.removeltem('shippingAddress')
+localStorage. removeltem( 'paymentMethod')
+window.location.href = '/signin';
 }
 
   useEffect(() => {

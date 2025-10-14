@@ -4,7 +4,8 @@ declare namespace Express {
             _id: string
             name: string
             email: string
-            isAdmin: string
+            isAdmin: boolean
+            token: string
         }
     }
 }

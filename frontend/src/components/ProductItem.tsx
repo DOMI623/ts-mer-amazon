@@ -46,7 +46,7 @@ export default function ProductItem({ product }: { product: Product }) {
             <Card.Title className="mb-2">{product.name}</Card.Title>
           </Link>
           <Rating rating={product.rating} numReviews={product.numReviews} />
-          <Card.Text className="mt-2 fw-bold">${product.price}</Card.Text>
+          <Card.Text className="mt-2 fw-bold">RD${product.price}</Card.Text>
         </div>
         <div className="mt-3">
           {product.countInStock === 0 ? (

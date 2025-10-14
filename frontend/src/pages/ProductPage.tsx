@@ -71,7 +71,7 @@ export default function ProductPage() {
             </ListGroup.Item>
             <ListGroup.Item>Precio : RD${product.price}</ListGroup.Item>
             <ListGroup.Item>
-              Description:
+              Descripcion:
               <p>{product.description}</p>
             </ListGroup.Item>
           </ListGroup>
